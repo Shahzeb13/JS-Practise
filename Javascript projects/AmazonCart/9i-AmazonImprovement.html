@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Cart Quantity Feature</title>
+
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cartQuantity {
+        background-color: #eee;
+        border: 5px solid #eee;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 20px;
+        width: 320px;
+        justify-content: center;
+      }
+
+      .cartQuantity button {
+        padding: 10px;
+        background-color: yellow;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="cartQuantity">
+      <button onclick="showQuantity()">Show Quantity</button>
+      <button onclick="updateCartQuantity(1)">+1</button>
+      <button onclick="updateCartQuantity(2)">+2</button>
+      <button onclick="updateCartQuantity(3)">+3</button>
+      <button onclick="updateCartQuantity(4)">+4</button>
+      <button onclick="updateCartQuantity(5)">+5</button>
+      <button onclick="updateCartQuantity(-2)">-2</button>
+      <button onclick="updateCartQuantity(-3)">-3</button>
+      <button onclick="resetCart()">Reset</button>
+      <button onclick="updateCartQuantity(-1)">Remove 1</button>
+      <p class="js-output"></p>
+    </div>
+
+    <script>
+      let cartQuantity = 0;
+      const maxQuantity = 10;
+        let paraElem = document.querySelector('.js-output');
+      function showQuantity() {
+        // alert(`Cart Quantity: ${cartQuantity}`);
+        // console.log(`Cart Quantity: ${cartQuantity}`);
+        paraElem.innerHTML = `Cart Quantity: ${cartQuantity}`;
+      }
+
+      function updateCartQuantity(amount) {
+        if (amount > 0 && cartQuantity + amount > maxQuantity) {
+          alert("The cart is full!");
+          return;
+        }
+
+        if (amount < 0 && cartQuantity + amount < 0) {
+          alert("Not enough items left!");
+          return;
+        }
+
+        cartQuantity += amount;
+        showQuantity();
+      }
+
+      function resetCart() {
+        cartQuantity = 0;
+        // alert("Cart Quantity Reset!");
+        // console.log("Cart Quantity Reset!");
+        paraElem.innerHTML = `Cart Quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>

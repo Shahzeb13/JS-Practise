@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+}
+
+/* Stylish Heading */
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Container Styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    gap: 12px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    align-items: center;
+}
+
+/* Todo List */
+.js-todo-div {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* Input fields */
+.grid-container > input {
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+.grid-container > input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Add Button */
+.grid-container > button {
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.grid-container > button:hover {
+    background: linear-gradient(135deg, #43A047, #1B5E20);
+    transform: scale(1.05);
+}
+
+/* Delete Button */
+.del-btn {
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #E53935, #B71C1C);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.del-btn:hover {
+    background: linear-gradient(135deg, #D32F2F, #880E4F);
+    transform: scale(1.05);
+}
+
+/* Smooth Animations */
+.grid-container, .js-todo-div {
+    transition: all 0.3s ease-in-out;
+}
