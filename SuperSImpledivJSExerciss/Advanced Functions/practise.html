@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // aj ma advanced functions k bara ma seek raha hun!! setTimeOut() ek built-in function ha jo hama koi dusra function future ma chalana ma madad deta ha
+        // ya 2 parameters leta ha 1>>> Ek wo function jo ham na futture ma run karna ha aur ek millseconds ma time jitna ham na wait karna ha
+
+        // setTimeout(function greet() {
+        //     console.log(`Hello`);
+        // } , 3000);
+        
+        // ya 3000 millseconds na ha aur seconds ma ya 3seconds banta ha
+        // yani ya function 3 seconds ka bad console par Hello print kara ga
+
+
+        //just like objects and arrays, functions are also values and we can save them in variables
+        // function greet() {
+        //     console.log(`Greeting Dear!`)
+        // }
+
+
+        // let greetings = function greet() {
+        //     console.log(`Greeting Dear!`);
+        // }
+
+        //Now, if we call greetings the will evoke the function that is saved inside it
+        //let's do it>>>>
+
+        // greetings();
+
+        //as we can see that we called the function inside the varaible greetings and greet() was called
+
+        // let greetings = function() {
+        //     console.log(`Greeting Dear!`)
+        // };
+
+        // what!!!! we jsut wrote a function without a name! exactly! this type of fucntion is called an anonymous function(without a name! a functin without a name is called an anynomous function)
+
+
+        //today, I learned that as functions are values we can pass function as a paremeter to other functions
+
+        function say(greetings){
+            greetings();
+        }; 
+
+        
+
+        say(function  greet() {
+            console.log(`Howdy Boy`);
+        });//ya jo ham function bej raha hain is ko callback function kaha jata ha
+
+        //uper ma function ka andar functin pass kr raha hun 
+
+
+
+        
+    </script>
+</body>
+</html>

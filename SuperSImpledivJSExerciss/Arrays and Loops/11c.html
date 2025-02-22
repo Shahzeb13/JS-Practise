@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const nums = [10,20,30]
+        const days = ['sunday' , 'monday' , 'tuesday' ,'wednesday' , 'thursday' , 'friday' , 'saturday']
+        const slurs = ['cockscker' , 'motherfucker' , 'bitchboy' , 'nigger'];
+        nums[2] = 99;
+        // console.log(nums);
+
+        //ya function ek array leta ha as a paramenter aur last value return karta ha
+        function getLastValue(nums){
+            let lastValue = nums[nums.length-1];
+            
+            console.log(lastValue);
+        }
+
+        getLastValue(nums);
+        getLastValue(days);
+        getLastValue(slurs);
+
+
+    //create a fucntion that swaps the first and last index of an array
+
+    function swapArray(array){
+        
+        // console.log(a);
+        // console.log(b);
+        let temp = array[0];
+        // console.log(temp);
+         array[0] = array[array.length-1];
+         array[array.length-1] = temp;
+         
+        console.log(array);
+        
+    }
+
+    swapArray(days);
+    swapArray(slurs);
+    </script>
+</body>
+</html>

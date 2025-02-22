@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions </title>
+</head>
+<body>
+        <script>
+            // console.log(10 + false);
+            // console.log('10' + false); 
+            // console.log('5' - true); 
+
+            function summ(a , b){
+                let res = a + b;
+                 return res;
+            }
+
+
+            let res = summ(4,5);
+            console.log(res);
+
+
+
+            function greet(name){
+
+                let msg = `Hello! ${name}`;
+                return msg;
+            }
+
+
+            let msg = greet('Mr-Imperfect');
+            console.log(msg);
+
+
+            function isEven(number){
+                let result = '';
+               number % 2 === 0 ? result = 'Even' : result = 'Odd';
+                return result;
+            }
+
+            let result = isEven(4);
+            console.log(result);
+
+
+            function boolToNum(boolean){
+               let result =  Number(boolean);
+               return result;
+            }
+
+
+            console.log(boolToNum(true));
+            console.log(boolToNum(false));
+
+            function sumArray(arr) {
+            let sum = 0;
+            arr.forEach(value , function(){
+                sum += value;
+            })
+            return sum;
+            }
+
+            console.log(sumArray([1, 2, 3, 4])); // 10
+            console.log(sumArray([10, 20, 30]));
+
+            // Bonus Challenge
+
+
+            function fizzBuzz(number){
+                if(number % 5 === 0 && number % 3 === 0){
+                    return 'FizzBuzz';
+                }
+                else if(number % 5 === 0){
+                    return 'Buzz';
+                }
+                else if(number % 3 === 0){
+                    return 'Fizz';
+                }
+
+                return number;
+            }
+
+            console.log(fizzBuzz(9));
+            console.log(fizzBuzz(25));
+            console.log(fizzBuzz(15));
+            console.log(fizzBuzz(13));
+
+        </script>
+</body>
+</html>

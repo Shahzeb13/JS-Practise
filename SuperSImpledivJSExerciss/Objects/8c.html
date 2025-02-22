@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // ya object 1 ha
+        let product1 = {
+            name: 'basketball',
+            price: 2095
+        }
+
+
+      
+        // ya object 2 ha
+        let product2 = {
+            name: 'Football',
+            price: 3095
+        }
+
+
+        // ham ek function banay gain aur in dono ko compare karein ga
+        function compareProducts(product1, product2) {
+            if(product1.price < product2.price){
+                console.log(`${product1.name} is less expensive than the ${product2.name}`);
+            }
+            else{
+                console.log(`${product2.name} is less expensive than the ${product1.name}`);
+            }
+
+        }
+
+        
+        // call kar raha hun function ko
+        // ma pehla function ko argument hi pass nai kar raha ta
+        //compareProducts(); esa khali chor dya ta ma na
+    compareProducts(product1 , product2);
+        
+    </script>
+</body>
+</html>

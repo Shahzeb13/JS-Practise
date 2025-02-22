@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // ya object 1 ha
+        let product1 = {
+            name: 'Football',
+            price: 2000
+        }
+
+
+      
+        // ya object 2 ha
+        let product2 = {
+            // price: 2000,
+            name: 'Football',
+            price: 2000,
+        }
+
+
+        // ham ek function banay gain aur in dono ko compare karein ga
+        function isSameProduct(product1, product2) {
+            // if(product1 === product2){
+            //  directly compare karna sa flase aay ga bcz remember objects are refernece values so they cannot be directly compared
+
+
+            if(JSON.stringify(product1) === JSON.stringify(product2)){
+                //json.stringify comparison tabi kaam karta ha jab objects ki properties same order ma hon 
+                
+            // if(product1.name === product2.name && product1.price === product2.price){
+                console.log(`True!`);
+            }
+            else{
+                console.log(`False!`);
+            }
+
+        }
+
+        
+        // call kar raha hun function ko
+        // ma pehla function ko argument hi pass nai kar raha ta
+        //compareProducts(); esa khali chor dya ta ma na
+    isSameProduct(product1 , product2);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="js-btn1" onclick="handleClickEvents(this.innerText)">Heads</button>
+    <button class="js-btn2" onclick="handleClickEvents(this.innerText)">Tails</button>
+    <p class="js-para"></p>
+
+    <script>   
+ 
+        // function handleClickEvents(){
+        //     let headsButtonElem = document.querySelector('.js-btn1');
+        //     let tailsButtonElem = document.querySelector('.js-btn2');//ider masla ha k jab ma tails button pa click karta hun tab b innerText property heads return karti ha jis wajah sa tails button par click karna sa pehla wala if execute hota ha
+            
+        //     let paraElem = document.querySelector('.js-para');
+            
+        //     if(headsButtonElem.innerText === 'Heads'){
+        //         paraElem.innerHTML = `You Choose : ${headsButtonElem.innerHTML}`;
+        //         // console.log(paraElem.innerHTML)
+               
+        //     }
+        //     else if(tailsButtonElem.innerText === 'Tails'){
+        //         paraElem.innerHTML = `You Choose : ${tailsButtonElem.innerHTML}`;
+        //         // console.log(paraElem.innerHTML);
+        //     }
+        // }
+
+
+        function handleClickEvents(choice){
+            // let buttonELem = choice;
+            // console.log(choice);
+            let paraElem = document.querySelector('.js-para');
+
+            paraElem.innerHTML = `You clicked : ${choice}`;
+
+        }
+
+
+    </script>
+</body>
+</html>

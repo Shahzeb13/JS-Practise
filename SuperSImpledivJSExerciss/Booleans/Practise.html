@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // <!-- in boolean context -->
+
+// let value = 'false'; 
+// let value =  false;
+// if(testValues){
+//     console.log('truhsy Value');
+    
+// }
+// else{
+//     console.log('falsy value');
+// }
+
+//logical or operator executes the very first truthsy value taht it encounters
+// let testValues = 0 || false || 'SHaheb' || ''  || undefined || NaN;
+// let booleanContext = Boolean(testValues);
+// console.log(`${testValues} :  ${booleanContext}`);
+
+        //&& operator ko jo b pehla falsy value mil jati ha tho wo us ko return kar deta ha
+        // aur agar sara values true hain tho last wali true value return karta ha
+        let values = 'hello'  &&  NaN && 0 && 45634;
+        console.log(values);
+        let values2 = 'shahzbeb' && 53 &&  233; 
+        console.log(values2);
+
+        console.log( 'NaN'  && "shahzeb"  || undefined);
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let cost = "";
+
+      const coffeePrice = 5 * 100;
+      const baggelsPrice = 2 * 3 * 100;
+      const soupPrice = 9 * 100;
+      const cents = 100;
+
+      let totalCost = (coffeePrice + baggelsPrice + soupPrice) / cents;
+      cost = ` Total cost : $${totalCost}`;
+        console.log(cost);
+      let tax = parseFloat(totalCost) * 0.1;   // the restraunt charges 10 perceent tax
+        console.log(`Tax(10%): $${tax}`);
+
+        let costAfterTax = `Total Cost: $${totalCost + tax}`;  // ider ham total price calculate kar rahha hain tax lagna k bad
+
+        console.log(costAfterTax);
+    
+    </script>
+  </body>
+</html>

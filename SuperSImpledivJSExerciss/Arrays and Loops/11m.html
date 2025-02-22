@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Ya program array ma sa largest and smallest number ko batata ha
+      function minMax(nums) {
+        let largestNum = 0;
+        let smallestNum = 0;
+        if (!nums.length) {
+          largestNum = null;
+          smallestNum = null;
+        } else {
+          for (let i = 0; i < nums.length; i++) {
+            nums[i] > largestNum
+              ? (largestNum = nums[i])
+              : (smallestNum = nums[i]);
+          }
+        }
+
+        console.log(`Max: ${largestNum} : Min: ${smallestNum}`);
+      }
+      // minMax([55 , 44, 77 , 66 ,655,44,77,34 , -9]);
+      minMax([876,8789]);
+
+      // let emptyArray = [];
+      // console.log(emptyArray.length);
+    </script>
+  </body>
+</html>

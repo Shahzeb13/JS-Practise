@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addArrays(arr1 , arr2) {
+            let resultingArray = [];
+            for(let i = 0 ; i <= arr1.length; i++) 
+            {
+                for(let j = 0 ; i <=arr2.length; j++) {
+                    resultingArray.push(arr1[i]+arr2[j] );
+                }
+                
+            }
+            console.log(arr1);
+            console.log(arr2);
+            console.log(resultingArray);
+        }
+
+
+        addArrays([1 , 3, 5] , [3 , 4, 5]);
+
+    </script>
+</body>
+</html>

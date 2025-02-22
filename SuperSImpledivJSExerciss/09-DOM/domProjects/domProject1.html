@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+          font-family: Roboto;  
+        }
+        .subscribe-btn{
+            
+            padding:10px 20px;
+            border:none;
+            border-radius: 20px;
+            color:white;
+            background-color: black;
+            font-weight:600;
+            letter-spacing: 1px;
+            cursor:pointer;
+
+
+        }
+
+
+        .is-subbed{
+            color: black;
+            background-color: rgb(240 , 240 ,240);
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <h2>Youtube Subscribe Button</h2>
+    <button class="js-subscribe-btn subscribe-btn" onclick = "subscribe()">Subscribe</button>
+
+
+
+    <script>
+
+        function subscribe(){
+         // document.querySelector('.js-subscribe-btn'); ya html element ek javascript object ha aur object values hoti hain jin ko ham store kar sakta hain
+
+        let buttonElement = document.querySelector('.js-subscribe-btn');
+        console.log(buttonElement);
+        // hamara task ha k jab b ham is button par click karain tho is ka inner text agar subscribe ha tho subscribed ho jay and viceverca.
+        if(buttonElement.innerText === 'Subscribe'){ // ma innerTEXT kar raha ta yar innerText hota ha
+            buttonElement.innerHTML = 'Subscribed';
+            buttonElement.classList.add('is-subbed');
+            // console.log(`if statement executed`);
+        }
+        else{
+            buttonElement.innerHTML = 'Subscribe';
+            buttonElement.classList.remove('is-subbed');
+            // console.log(`else statement executed`);
+        }   
+        }
+        
+    </script>
+</body>
+</html>

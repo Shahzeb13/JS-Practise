@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TruthyFalsy</title>
+  </head>
+  <body>
+    <script>
+      let cartQuantity = -1;
+      console.log(Boolean(cartQuantity));
+
+      if (cartQuantity) {
+        console.log("Cart is not empty");
+      } else {
+        console.log("cart is empty");
+      }
+      // else if(cartQuantity){
+      //     console.log("Cart is empty"); // ider ma na ghalti kari ka else ki jagah else if laga dala jis wajah sa jab cartQuantity zero hota ha tho koi b block execute nai hota
+
+
+
+
+      // ya code negative values ko deal karna kalya ha
+      if (cartQuantity > 0) {
+        // Only run when cartQuantity is positive
+        console.log("Cart is not empty");
+      } else if (cartQuantity === 0) {
+        // Explicitly check for an empty cart
+        console.log("Cart is empty");
+      } else {
+        // Handle negative values
+        console.log("Invalid cart quantity");
+      }
+
+
+
+
+      let values = [0, "", undefined, null, "Hello", 42, [], {}, NaN]; // array ha
+
+values.forEach(value => {
+    console.log(value, "is", Boolean(value));  // boolaen value check kara ga ka array ki values boolean ha yanai
+
+});
+
+
+    function assignName(userName){
+        let displayName = userName || "Guest";
+        console.log(`Welcome ${displayName}`);
+    }
+    assignName('');
+    assignName('Shahzeb');
+    assignName(NaN);
+    assignName(undefined);
+    assignName('ALi');
+    assignName(document.all); //document.all is also a null value
+    //output: 
+
+    assignName('NaN');
+
+
+     // ya muja ' How are you bud da raha ha'
+     /// ya undefined pata nai kyun
+    
+
+
+     // pata nai kya backchodyan kar raha hun ma is ka sath
+      // let message = function Greet(){
+      //   let msg = 'How are you bud';
+      //   return msg;
+      // } 
+      // console.log(message);
+      
+    // let result = ''  || null || 't' || 0 || false || undefined || NaN || null || '' || [] || {};
+    // console.log(result); 
+
+    // output: t
+    </script>
+  </body>
+</html>

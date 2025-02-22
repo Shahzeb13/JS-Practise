@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="js-btn">9a</button>
+    <button  onclick = 
+    " change9bText()" id = "js-btn2">9b</button>
+    <script>
+        // document.querySelector('#js-btn'); // html element are js objects
+        //objects are values
+        let buttonElem = document.querySelector('#js-btn');
+        console.log(buttonElem); 
+
+        function change9bText(){
+            let buttonElem2 = document.querySelector('#js-btn2');
+        buttonElem2.innerHTML = '9b Done!'
+        }
+        
+    </script>
+
+</body>
+</html>

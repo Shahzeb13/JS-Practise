@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function removeEggs(array) {
+        let newArr = [];
+        let eggCount = 0;
+        let arr = array.slice().reverse();   //pehla ma na original array ko reverse kya ta k last wala 2 eggs pehla aaa jain kyun k 12d ma ma na pehla 2 eggs ko remove karna ka logic lika ta
+        console.log(arr);//pehla slice() original array ki copy bana raha ha aur pur reverse kar k arr variable sa save kar raha ha
+        for (let i = 0; i < arr.length; i++) {
+            // console.log(`Iteration ${i+1}`);
+            if (arr[i] === "eggs") {
+                eggCount++;
+                // console.log(`egg count : ${eggCount}`);
+                if (eggCount <= 2) { 
+                continue;
+                } else {
+                newArr.push(arr[i]);
+                }
+          } else {
+                newArr.push(arr[i]);
+            }
+
+          
+        }
+        return newArr.reverse();  //ider jab ma na reversed array ma sa pehla do eggs hata dya ma na pur sa array ko reverse kar k return k dya tho pehla do jo remove kya ta wo last wala do remove ma convert hh gay
+      }
+      let originalArray = [
+        "eggs",
+        "apple",
+        "eggs",
+        "eggs",
+        "ham",
+        "banana",
+      ];
+      console.log(originalArray);
+      let newArray = removeEggs(originalArray);
+      
+      console.log(newArray);
+    //   console.log(newArray.reverse());
+    
+    </script>
+  </body>
+</html>

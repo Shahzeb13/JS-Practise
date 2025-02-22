@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Roboto;
+        }
+        .js-btn{
+        padding: 10px 25px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        background-color: rgb(244 ,244, 244);
+        border:none;
+        color:black;
+        border-radius: 22px;
+        cursor: pointer;
+
+
+        }
+
+        .is-toggled{
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button class = 'js-btn'>Test</button> -->
+    <button class = 'js-btn js-1' onclick = "func(this)">Gaming</button> 
+    <button class = 'js-btn js-2' onclick = "func(this)">Tech</button>
+    <button class = 'js-btn js-3' onclick = "func(this)">Music</button>
+
+    <script>
+        // let btnElem = document.querySelector('.js-btn');
+        // console.log(btnElem.classList.contains('js-btn'));
+        function func(choice){
+        //    let btnElem = document.querySelector('.js-btn');
+        let btnElem = choice;
+        let innerText = choice.innerText;
+        if(!btnElem.classList.contains('is-toggled') && innerText === 'Gaming' ){
+            btnElem.classList.add('is-toggled');
+            document.querySelector('.js-2').classList.remove('is-toggled');
+            document.querySelector('.js-3').classList.remove('is-toggled');
+        }
+        else if(!btnElem.classList.contains('is-toggled') && innerText === 'Tech' ) {
+            btnElem.classList.add('is-toggled');
+            document.querySelector('.js-1').classList.remove('is-toggled');
+            document.querySelector('.js-3').classList.remove('is-toggled');
+        } 
+        else if(!btnElem.classList.contains('is-toggled') && innerText === 'Music' ) {
+           btnElem.classList.add('is-toggled');
+           document.querySelector('.js-1').classList.remove('is-toggled');
+            document.querySelector('.js-2').classList.remove('is-toggled');
+        }
+        }
+        
+    </script>
+</body>
+</html>

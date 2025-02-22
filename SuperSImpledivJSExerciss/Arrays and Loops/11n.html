@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countWords(words) {
+            let wordsCount = {};
+            let appleCount = 0;
+            let grapeCount = 0;
+            let bananaCount = 0;
+            for( let i = 0 ; i < words.length ; i++ ){
+                if(words[i] === 'apple'){
+                    appleCount ++;
+                }
+                else if(words[i] === 'grape'){
+                    grapeCount ++; 
+                }
+                else if(words[i] === 'banana'){
+                    bananaCount++;
+                }
+                
+        }
+        // console.log(appleCount);
+        // console.log(grapeCount);
+        // console.log(bananaCount);
+        wordsCount.apples = appleCount;
+        wordsCount.grapes = grapeCount;
+        wordsCount.banana = bananaCount;
+
+      return wordsCount;
+
+        
+    }
+
+
+        let result = countWords(['apple', 'grape', 'apple', 'banana', 'apple', 'grape', 'banana', 'banana','grape', 'apple']);
+        //output esa hona chaya
+        console.log(result);
+        // wordsCount = {
+        //     apple : 3 , 
+        //     grape: 2 , 
+        //     banana : 1
+        // }
+    </script>
+</body>
+</html>

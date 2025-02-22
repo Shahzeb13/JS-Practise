@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RockPaperScissor</title>
+  </head>
+  <body>
+    <h2>Rock Paper Scissors</h2>
+    <button
+      onclick="
+        let computerMove =  pickComputerMove();
+
+        let result = '';
+
+        if(computerMove === 'rock'){
+            result = 'Tie'
+        }
+        else if(computerMove === 'paper'){
+            result = 'You loose!'
+        }
+        else if(computerMove === 'Scissors'){
+            result = 'You won!'
+        }
+
+
+        alert(`You picked Rock. Program picked ${computerMove}. Result: ${result}`);
+"
+    >
+      Rock
+    </button>
+
+    <button
+      onclick="
+        
+        let computerMove =  pickComputerMove();
+    let result = '';
+
+    if(computerMove === 'rock'){
+        result = 'You wini'
+    }
+    else if(computerMove === 'paper'){
+        result = 'Tie!'
+    }
+    else if(computerMove === 'Scissors'){
+        result = 'You loose!'
+    }
+
+
+    alert(`You picked Paper. Program picked ${computerMove}. Result: ${result}`); "
+    >
+      Paper
+    </button>
+
+    <button
+      onclick="
+
+        let computerMove = pickComputerMove();  // I am saving the value returned by the funcitn in a variable in order to use it in onlick 
+        
+        let result = '';
+
+        if(computerMove === 'rock'){
+            result = 'You Loose'
+        }
+        else if(computerMove === 'paper'){
+            result = 'You Won!'
+        }
+        else if(computerMove === 'Scissors'){
+            result = 'Tie!'
+        }
+
+
+        alert(`You picked Scissor. Program picked ${computerMove}. Result: ${result}`); "
+    >
+      Scissors
+    </button>
+    <script>
+
+
+        function pickComputerMove(){
+            let randomNumber = Math.random();
+
+        let  computerMove = '';
+
+        if(randomNumber >= 0 && randomNumber < 1/3)
+        {
+            computerMove = 'rock';
+        }
+        else if(randomNumber >= 1/3 && randomNumber < 2/3) {
+            computerMove = 'paper';
+        }
+        else if(randomNumber >= 2/3 &&  randomNumber < 1) {
+            computerMove = 'Scissors';
+        }
+
+
+        return computerMove;
+        };
+    </script>
+  </body>
+</html>

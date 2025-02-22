@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip game</title>
+</head>
+<body>
+
+
+    <div>
+        <button onclick = "playGame('Heads')">Heads</button>
+        <button onclick = "playGame('Tails')">Tails</button>
+        <button onclick = "
+        localStorage.removeItem('gameScore');
+        gameScore.Wins = 0;
+        gameScore.Losses = 0;
+        ">Reset Score</button>
+    </div>
+    <script>
+
+        let gameScore =   JSON.parse(localStorage.getItem('gameScore')) || {
+            Wins: 0,
+            Losses: 0
+        }
+
+        
+
+
+        function generateRandomGuess(){
+        let randomNumber = Math.random();
+            console.log(randomNumber);
+            let coinToss = '';
+            randomNumber < 0.5 ? coinToss = 'Heads' : coinToss = 'Tails';
+            console.log(coinToss);
+            return coinToss;
+        }
+        
+        //calScore function result ka base par score update karta ha
+        function calScore(gameResult){
+            if(gameResult.trim() === 'You won!'){
+                gameScore.Wins += 1;
+            }
+            else if(gameResult.trim() === 'You lost!'){
+                gameScore.Losses += 1;
+            }
+        }
+        function playGame(guess){
+        let coinResult = generateRandomGuess();
+        let gameResult = "";
+        guess === coinResult ? gameResult = 'You won!' : gameResult = 'You lost!';
+        calScore(gameResult); // ider mana calScore ko gameResult as a parameter pass kar dya ha
+        localStorage.setItem('gameScore'  , JSON.stringify(gameScore));
+        alert(`Your Guess: ${guess} : Computer Guess : ${coinResult} : Result : ${gameResult }
+        Wins : ${gameScore.Wins} : Losses : ${gameScore.Losses} `);
+        }
+        
+        // if(randomNumber < 0.5){
+        //     result = 'Heads';
+        // }
+        // else{
+        //     result = 'Tails'
+        // }
+        
+
+        
+
+        // if(guess === result){
+        //     console.log('You won!');
+        // }
+        // else{
+        //     console.log('You lost!');
+        // }
+
+        
+    </script>
+</body>
+</html>

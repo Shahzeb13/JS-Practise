@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Ya program array ma sa largest and smallest number ko batata ha
+      function minMax(nums) {
+        let largestNum = nums[0];
+        let smallestNum = nums[0];
+        if (!nums.length) {
+          largestNum = null;
+          smallestNum = null;
+        } else {
+          for (let i = 1; i < nums.length; i++) {
+            if (nums[i] > largestNum) {
+              largestNum = nums[i];
+            } /*else*/
+             if (nums[i] < smallestNum) {
+              smallestNum = nums[i];
+            }
+
+            // } else if(nums[i] < smallestNum) {
+            //   smallestNum = nums[i];
+            // }
+          }
+        }
+        console.log(`Max: ${largestNum} : Min: ${smallestNum}`);
+      }
+      //   minMax([55 , 44, 77 , 66 ,655,44,77,34 , -9]);
+      //   minMax([56 ,57,34,64,-6,54,-2,346,364]);
+      //   minMax([87]);
+      //   minMax([]);
+      minMax([-9, -55, -6  , -89 ]);
+  
+      //   minMax([100, 88]);
+      //   minMax([50 , 90 ]);
+      //   minMax([453,454,4326,3456,245,5635,4264,3634,346,3634,5646,4634,5634,34634,346346,345634,5643345634]) // ider kuch locha ha fix karna para ga.......???????/
+
+      // let emptyArray = [];
+      // console.log(emptyArray.length);
+    </script>
+  </body>
+</html>

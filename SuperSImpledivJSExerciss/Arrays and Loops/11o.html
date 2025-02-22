@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //how to add properties to the object
+        //  let obj =  {};
+
+        //  //ya ma dot notation ka zarya sa properites add kar raha hun
+        //  obj.name = 'shahzeb';
+        //  obj.fatherName = 'Shahid Raza';
+        //  console.log(obj);
+        //  //bracket notation ka through properties add kar raha hain
+        //  obj['age'] = 21;
+        //  obj['id'] = 73;
+        //  console.log(obj);
+
+        //  //dynamically properties kasa add karain object ma 
+
+
+        // let word = 'apple';
+        // // let anotherWord = word;
+        // obj[word] = 1;
+        // console.log(obj);
+
+
+        // let word2 = 'banana';
+        // let word3 = word2;
+        // let word4 = word3;
+        // obj[word4] = 1;
+
+        // console.log(obj);
+
+
+
+        //loop ka zarya dyanmicalyy properties objects ma add karna
+        let obj2 = {};
+
+        let keys = ["city", "country", "population" , 'test'];
+        let values = ["Karachi", "Pakistan", 15000000];
+        // console.log(keys[0]); //city
+
+        for( let i  =  0; i < keys.length; i++){
+            obj2[keys[i]] = values[i];
+            // obj2['city'] = 'Karachi'    pehla iteration
+            // obj2['country'] = 'Pakistan'    dusra iteration
+            // obj2['population'] = 15000000    tisra iteration
+        }
+        console.log(obj2);
+
+
+         
+
+
+    </script>
+</body>
+</html>

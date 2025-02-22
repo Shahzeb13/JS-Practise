@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+
+<button onclick = 'messages++'>Add</button>
+<button onclick = 'messages--'>Remove</button>
+<body>
+    <script>
+        let messages = 2;
+        function titleChanges() {
+            setInterval(function() {
+                if(document.title === 'App'){
+                    if(messages === 0){
+                        return;
+                    }
+                    else{
+                        document.title = `(${messages}) New Messages`  
+                    }
+                
+                }
+                else{
+                    document.title = `App`;
+                }
+            } , 1000)
+        }
+
+
+        titleChanges();
+    </script>
+</body>
+</html>

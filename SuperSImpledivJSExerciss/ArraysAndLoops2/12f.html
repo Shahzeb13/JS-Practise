@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        button{
+            padding:10px 20px;
+            border:none;
+            color:white;
+            background-color: yellowgreen;
+            cursor: pointer;
+            font-family: Roboto;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <button onclick = "fizzBizz()">FIZZBUZZ</button>
+    <script>
+        
+        function fizzBizz()  {
+            for( let i = 0 ; i <= 20; i++){
+                if(i%3===0 && i%5===0){
+                    console.log(`FizzBuzz`);
+                } else if(i%3===0){
+                    console.log(`Fizz`);
+                } else if(i%5===0){
+                    console.log(`Buzz`);
+                }
+                else{
+                    console.log(i);
+                }
+                
+            }
+        }
+       
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            background-color: yellowgreen;
+            cursor: pointer;
+            font-family: Roboto, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fizzBuzz()">FIZZBUZZ</button>
+    <script>
+        function fizzBuzz() {
+            for (let i = 1; i <= 20; i++) {
+                console.log(i % 15 === 0 ? "FizzBuzz" : i % 3 === 0 ? "Fizz" : i % 5 === 0 ? "Buzz" : i);
+            }
+        }
+    </script>
+</body>
+</html>

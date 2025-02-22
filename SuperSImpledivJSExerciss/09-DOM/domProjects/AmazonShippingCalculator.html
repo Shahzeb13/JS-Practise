@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmazonShippingCalculator</title>
+</head>
+<body>
+    <h2>Amazon Shipping Calculator</h2>
+    <p>Orders Under 40$ = 10$ Shipping</p>
+    <p>Orders Over 40$ = No Shipping</p>
+    <input  onkeydown="
+        OnkeyDownCostHandler();
+        //pata nai kyun simon na kaha ta ka hamian event object ko is function ko pass karna ha par bina pass kya b ya chal raha ha
+        
+    "
+    id = 'js-input' placeholder = 'Cost of Orders'>
+    <button onclick = "calculate()" ,
+    >Calculate</button>
+    <p id = 'js-output-para'></p>
+
+    <script>
+
+        function OnkeyDownCostHandler(){
+            if(event.key === 'Enter'){
+            calculate();
+        }
+        }
+        function calculate(){
+        //  let inputElem = parseFloat(document.querySelector('#js-input').value);
+         let inputElem = Number(parseFloat(document.querySelector('#js-input').value));
+        console.log(inputElem);
+        let outputElem = document.querySelector('#js-output-para');
+        if(inputElem < 40){
+            outputElem.innerHTML = `Total Price = ${inputElem + 10} $`;
+        }
+        else {
+            outputElem.innerHTML = `Total Price = ${inputElem} $`;
+        }
+        console.log(outputElem.innerHTML);   
+        }
+        
+    </script>
+</body>
+</html>

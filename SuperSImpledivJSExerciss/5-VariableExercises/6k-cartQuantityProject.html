@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon cart Quantity Feature</title>
+
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      .cartQuantity {
+        background-color: #eee;
+        border:5px solid #eee;
+      border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+      .cartQuantity button {
+        padding: 10px;
+        background-color: yellow;
+        border: none;
+        border-radius: 14px;
+      }
+    </style> -->
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      
+    "
+  >
+    <div class="cartQuantity">
+      <button
+        onclick="
+
+            console.log(`Cart Quantity: ${cartQuantity}`);
+            alert(`Cart Quantity: ${cartQuantity}`);"
+      >
+        Show Quantity
+      </button>
+            
+        <button onclick="
+        if(cartQuantity + 1 > maxQuantity){
+            alert('The cart is Full');
+        }
+        else{
+          cartQuantity ++;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`);  
+        }
+        
+        ">Add to Cart</button>
+
+
+        <button  onclick="
+        if(cartQuantity + 2 > maxQuantity){
+            alert('The cart is Full');
+        }
+        else{
+          cartQuantity += 2;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`);  
+        }
+        
+        ">+2</button>
+
+
+        <button onclick="
+        if(cartQuantity + 3 > maxQuantity){
+            alert('The cart is Full');
+        }
+        else{
+          cartQuantity += 3;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`);  
+        }
+        
+        ">+3</button>
+
+        <button  onclick="
+        if(cartQuantity + 4> maxQuantity){
+            alert('The cart is Full');
+        }
+        else{
+            cartQuantity += 4 ;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`);
+        }
+        
+        ">+4</button>
+
+        <button onclick="
+        if(cartQuantity + 5> maxQuantity){
+            alert('The cart is Full');
+        }
+        else{
+           cartQuantity += 5;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`); 
+        }
+        
+        ">+5</button>
+
+        <button  onclick="
+        if(cartQuantity - 2 < 0){
+            alert('There are not enough items left!');
+        }
+        else{
+           cartQuantity -=2;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`); 
+        }
+        
+        ">-2</button>
+
+        <button onclick="
+
+        // for 1 - 3 < 0 true and for 2-3 <0 true and 3-3 <0 true so it will minus three items from cartQuantity
+        if(cartQuantity - 3 < 0){
+            alert('There are not enough items left!')
+        }
+        else{
+           cartQuantity -= 3;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        alert(`Cart Quantity : ${cartQuantity}`); 
+        }
+        
+        ">-3</button>
+
+        <button onclick="
+        cartQuantity *= 0 ;
+        console.log(`Cart Quantity Reseted: ${cartQuantity}`);
+        alert(`Cart Quantity Reseted: ${cartQuantity}`);
+        ">Reset cart</button>
+      
+
+        <button onclick="
+        
+        if(cartQuantity === 0){
+        alert('There is no item left in the cart!')
+        }
+        else {
+        cartQuantity --;
+        console.log(`Cart Quantity Reseted by One: ${cartQuantity}`);
+        alert(`Cart Quantity Reseted by One: ${cartQuantity}`); 
+             
+        }
+        ">Remove Form Cart</button>
+    </div>
+
+    <script>
+      let cartQuantity = 0;
+      const maxQuantity = 10;
+      
+      console.log(cartQuantity);
+    </script>
+  </body>
+</html>

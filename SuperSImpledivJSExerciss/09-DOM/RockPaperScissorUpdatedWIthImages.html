@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fefedc;
+            font-family: Arial, sans-serif;
+        }
+
+        .game-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .result-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        #btn4 {
+            background-color: rgb(199, 74, 74);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .btn4{
+            background-color: yellowgreen;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <button class='btn' onclick="playGame('rock')">
+            <img src="Image/rock.png" alt="Rock">
+        </button>
+        <button class='btn' onclick="playGame('paper')">
+            <img src="Image/paper.png" alt="Paper">
+        </button>
+        <button class='btn' onclick="playGame('scissor')">
+            <img src="Image/scissor.png" alt="Scissor">
+        </button>
+
+    </div>
+    
+    <div class="result-container">
+        <p class="js-moves"></p>
+        <p class="js-result"></p>
+        <p class="js-score"></p>
+    </div>
+
+    <button id="btn4" onclick="resetScore()">Delete Score</button>
+    <button class = 'btn4' onclick = 'autoPlay()'>Autoplay</button> 
+    
+    <script>
+        let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
+        updateScoreElement();
+
+        function pickComputerMove() {
+            const moves = ['rock', 'paper', 'scissor'];
+            return moves[Math.floor(Math.random() * 3)];
+        }
+
+        function updateScoreElement() {
+            document.querySelector('.js-score').textContent = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+        }
+
+        function playGame(userMove) {
+            let computerMove = pickComputerMove();
+            let result = '';
+            
+            if (userMove === computerMove) {
+                result = "It's a tie!";
+                score.ties++;
+            } else if (
+                (userMove === 'rock' && computerMove === 'scissor') ||
+                (userMove === 'paper' && computerMove === 'rock') ||
+                (userMove === 'scissor' && computerMove === 'paper')
+            ) {
+                result = "You won!";
+                score.wins++;
+            } else {
+                result = "You lost!";
+                score.losses++;
+            }
+            
+            localStorage.setItem('score', JSON.stringify(score));
+            updateScoreElement();
+            
+            document.querySelector('.js-moves').innerHTML = `
+                <img src="Image/${userMove}.png" alt="Your move">
+                <span>vs</span>
+                <img src="Image/${computerMove}.png" alt="Computer move">
+            `;
+            document.querySelector('.js-result').textContent = result;
+        }
+
+        function resetScore() {
+            localStorage.removeItem('score');
+            score = { wins: 0, losses: 0, ties: 0 };
+            updateScoreElement();
+        }
+         
+        let isAutoPlaying = false;
+        let intervalId;
+        function autoPlay() {
+            // let userMove = pickComputerMove();
+            // setInterval(playGame(userMove)  , 1000)///ma setInterval ma direct playGame kyun nai use kar pa raha 
+             // matlab game abi chalu nai hua ha
+            // let intervalId;  // i think function dubara run hona ka karan intervalId reinitialize hojata ha is lya else block ma clearInterval setInterval ko rok nai paa raha ha
+            if(!isAutoPlaying){
+            console.log(`Game Started`);
+            intervalId = setInterval(function() {
+                const userMove = pickComputerMove();
+                playGame(userMove);
+            } , 1000)
+            isAutoPlaying = true; // issue ya ha ka ider tho true ho jata ha isAutoPlaying par uper function run hona par pir sa false h jata ha
+            console.log(isAutoPlaying);
+        } else {
+                clearInterval(intervalId);
+                isAutoPlaying = false;
+                console.log(isAutoPlaying);
+                console.log('Game Stoped');
+            }
+
+        }
+    </script>
+</body>
+</html>

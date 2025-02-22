@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function convertLength(length , from , to){
+            let result = '';
+            if(from === to){
+                console.log(`Enter vice vercal unit please!`);
+                return;
+            }
+            else if(from === 'miles' && to === 'km'){
+                result = ` ${length} Km = ${length * 0.621371} miles`;
+                //convert kilometer into miles
+                console.log(result);
+            }
+            else if(from === 'km' && to === 'miles'){
+                result = `${length} miles = ${length * 1.60934} km`;
+                //converts miles into kilometers
+                console.log(result);
+            }
+            else if(from === 'ft' && to === 'miles'){
+                //convert ft into miles
+                result = `${length} miles = ${length / 5280} ft`;
+                console.log(result);
+            }
+            else if(from === 'miles' && to === 'ft'){
+                //convert miles into ft
+                result = `${length} ft = ${length * 5280} miles`;
+                console.log(result);
+            }
+            else if(from === 'km' && to === 'ft'){
+                //convert ft into kilometers
+                result = `${length} ft = ${length * 3280.84} km`;
+                console.log(result);
+            }
+            else if(from === 'ft' && to === 'km'){
+                //convert kilometer into ft
+                result = `${length} ft = ${length * 0.0003048} km`;
+                console.log(result);
+            }
+            else{
+                console.log(`ALlowed Inputs: Miles , Kilometers , Ft! Invalid Input! ${from} : ${to}`);
+            }
+            }
+
+
+        convertLength(50 , 'miles' , 'lbs');
+        convertLength(344 , 'ft' , 'km');
+    </script>
+</body>
+</html>

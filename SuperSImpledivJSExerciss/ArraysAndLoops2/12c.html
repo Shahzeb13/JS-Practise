@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function findIndex(array, word) {
+            for(let i = 0; i < array.length; i++){
+                if(array[i] === word){
+                    console.log(`Index of the Word ${word} is ${i}`);
+                    break;
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+
+
+        // findTheWord(['hello' , 'world' , 'search' , 'good' ]);
+        findIndex(['yes' , 'found' , 'search', 'hello' , 'lol' , 'search'] ,'lol');
+        
+    </script>
+</body>
+</html>

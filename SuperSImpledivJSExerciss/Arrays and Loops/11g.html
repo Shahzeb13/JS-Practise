@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums = [1 , 2 , 3  , 4 , 5];
+        let nums2 = [ -1 , 0 , 5 , 55 , 9];
+        let doubledNums = [];
+        let doubledNums2 = [];
+
+        function addOne(array , dbArray){
+            for(i = 0; i< array.length;  i++){
+                        dbArray.push(array[i] + 1);
+
+                    }
+                    console.log(array);
+                    console.log(dbArray);
+        }
+
+
+        addOne(nums , doubledNums);
+        addOne(nums2 , doubledNums2);
+        
+       
+    </script>
+</body>
+</html>

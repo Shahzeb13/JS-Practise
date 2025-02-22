@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumberGussingGame</title>
+
+    <style>
+
+
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto , 'Poppins';
+        }
+
+
+        html ,body{
+            background-color: #fefedc;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            justify-content: center;
+            align-items:center;
+            width:100%;
+            height:100%;
+        }
+        button{
+            
+            padding:20px 70px;
+            color:white;
+            background-color: rgba(217, 231, 11, 0.7);
+            border:none;
+            border-radius: 255px;
+            font-weight: 900;
+            font-size:small
+
+
+        }   
+
+        h2{
+            color: rgb(155, 253, 8);
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Guess a Number!</h2>
+    <button  onclick =
+    "
+    
+    playGame();
+        
+
+">Play</button>
+
+    <script>
+        // let lives = 3;
+        function generateRandomNumber(){
+            let randomNumber = Math.round((Math.random() * 100));
+            // console.log(randomNumber);
+            return randomNumber;
+        }
+
+        
+
+            
+    
+        function myGuess(myGuess , randomNumber){
+            
+        if(randomNumber > myGuess){
+            // console.log('You need to go up little buddy!');
+            alert('You need to go up little buddy!');
+        }
+        else if(randomNumber < myGuess){
+            // console.log('A little lower my friend');
+            alert('A little lower my friend')
+        }
+        else if( randomNumber === myGuess){
+            alert('Woah! We got Mr.einstein over here! Good job! You guessed it right;');
+            return true;
+        }
+        return false;
+        }
+
+
+
+        function playGame(){
+            
+            let lives = 3;
+            let randomNumber = generateRandomNumber();
+            console.log(randomNumber);
+            
+            do{
+            let Guess = parseInt(prompt('Enter a Number between 1 and 100'));
+            // if(Guess == ''){
+            //     alert('Enter a number please');
+            //     break;
+            // }
+            let istrue = myGuess(Guess , randomNumber);  // false or true
+            if (istrue){alert('Congrats! You guessed it right! pal!')  // ya if tabi chala ga agar myGuess true value return karta ha
+            return; // agar true return hta ha tho return ho jay ga aur game over ho jay ga ---> not sure yet 
+            
+        };
+            lives --;
+            console.log(lives);
+            // logic jab lives khatam ho jain gi tho loop break ho jay ga har ghalat guess par lives ma increment hota raa ga
+            if (lives <= 0) {
+                    alert(`Game Over! The correct number was ${randomNumber}`);
+                    
+                    break; // End loop when lives are over
+
+                }
+        } 
+        while(lives <= 3);
+        
+        
+        }
+        
+       
+        
+
+        
+    </script>
+</body>
+</html>

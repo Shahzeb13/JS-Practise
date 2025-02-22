@@ -1,0 +1,191 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Name" class = 'js-input1'>
+    <input placeholder="Roll" class = 'js-input2'>
+    <button class="js-btn" onclick = 'addStudent()'>Submit</button>
+    <div class = 'js-div'></div>
+
+    <script>
+        let Students = [];
+        
+        function convertIntoObject(value1 , value2) {
+           let student = {};
+            let word1 = value1;
+            let word2 = value2;
+            student['name'] = word1;
+            student['roll'] = word2; 
+            
+            return student;
+            
+           
+        }
+
+        function addIntoArray (object) {
+            
+            Students.push(object)
+            return Students;
+        }
+        
+        function iterateArray(array) {
+            //sab sa pehla loop lagao
+            let html = '';
+            for(let i  = 0 ; i < array.length; i++) {
+                 html += `<p> Name : ${(array[i].name)} , Roll : ${(array[i].roll)} </p>`;
+            }
+            console.log(html);
+            let divElem = document.querySelector('.js-div');
+            divElem.innerHTML = html;
+        } 
+
+        function addStudent() {
+            
+            let name = document.querySelector('.js-input1').value;
+            let roll = document.querySelector('.js-input2').value;
+            
+            let student = convertIntoObject(name , roll); //  student is an object
+
+            console.log(student);
+            
+            let students = addIntoArray(student);  //students is an array Of objects
+            //task 1 completed
+            console.log(students);
+            // for(let i = 0; i < students.length; i++) {
+            iterateArray(students); //passing student array to iterateArray function
+            // }
+
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            border: 2px solid #ddd;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 2px solid #66ccff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #0099cc;
+            outline: none;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4500;
+        }
+
+        .js-div {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #cce7ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .js-div p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        h2 {
+            color: #ff6600;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Form</h2>
+        <input placeholder="Name" class="js-input1">
+        <input placeholder="Roll" class="js-input2">
+        <button class="js-btn" onclick="addStudent()">Submit</button>
+        <div class="js-div"></div>
+    </div>
+
+    <script>
+        let Students = [];
+        
+        function convertIntoObject(value1 , value2) {
+            let student = {};
+            student['name'] = value1;
+            student['roll'] = value2; 
+            return student;
+        }
+
+        function addIntoArray(object) {
+            Students.push(object);
+            return Students;
+        }
+
+        function iterateArrayAndGenerateHtml(array) {
+            let html = '';
+            for(let i = 0; i < array.length; i++) {
+                html += `<p> Name: ${(array[i].name)}, Roll: ${(array[i].roll)} </p>`;
+            }
+            let divElem = document.querySelector('.js-div');
+            divElem.innerHTML = html;
+        } 
+
+        function addStudent() {
+            let name = document.querySelector('.js-input1').value;
+            let roll = document.querySelector('.js-input2').value;
+            let student = convertIntoObject(name , roll); 
+            let students = addIntoArray(student);  
+            iterateArrayAndGenerateHtml(students); 
+        }
+    </script>
+</body>
+</html>

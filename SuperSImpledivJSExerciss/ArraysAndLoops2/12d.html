@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function removeEggs(array) {
+        let newArr = [];
+        let eggCount = 0;
+        for (let i = 0; i < array.length; i++) {
+            console.log(`Iteration ${i+1}`);
+            if (array[i] === "eggs") {
+                eggCount++;
+                console.log(`egg count : ${eggCount}`);
+                if (eggCount <= 2) { 
+                continue;
+                } else {
+                newArr.push(array[i]);
+                }
+          } else {
+                newArr.push(array[i]);
+            }
+
+          
+        }
+        return newArr;
+      }
+
+      let newArray = removeEggs([
+        "eggs",
+        "apple",
+        "eggs",
+        "eggs",
+        "ham",
+        "banana",
+      ]);
+      console.log(newArray);
+      console.log(newArray.reverse());
+    </script>
+  </body>
+</html>

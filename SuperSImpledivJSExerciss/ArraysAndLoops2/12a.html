@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function findTheWord(array) {
+            for(let i = 0; i < array.length; i++){
+                if(array[i] != 'search'){
+                    console.log(`${-1}`);
+                    continue;
+                    
+                } 
+                else {
+                    console.log(`${i}`);
+                }
+            }
+        }
+
+
+        // findTheWord(['hello' , 'world' , 'search' , 'good' ]);
+        findTheWord(['not' , 'found']);
+    </script>
+</body>
+</html>

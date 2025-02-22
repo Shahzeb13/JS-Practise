@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Roboto;
+        }
+        .js-btn{
+        padding: 10px 25px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        background-color: black;
+        border:none;
+        color:white;
+        border-radius: 22px;
+
+
+        }
+
+        .is-toggled{
+            color: black;
+            background-color: rgb(244 ,244, 244);
+        }
+    </style>
+</head>
+<body>
+    <!-- <button class = 'js-btn'>Test</button> -->
+    <button class = 'js-btn' onclick = "func(this)">Gaming</button> 
+    <button class = 'js-btn' onclick = "func(this)">Tech</button>
+    <button class = 'js-btn' onclick = "func(this)">Music</button>
+
+    <script>
+        // let btnElem = document.querySelector('.js-btn');
+        // console.log(btnElem.classList.contains('js-btn'));
+        function func(choice){
+        //    let btnElem = document.querySelector('.js-btn');
+        let btnElem = choice;
+        if(!btnElem.classList.contains('is-toggled')){
+            console.log(btnElem.classList.add('is-toggled'));
+        }
+        else {
+            console.log(btnElem.classList.remove('is-toggled'));
+        } 
+        }
+        
+    </script>
+</body>
+</html>

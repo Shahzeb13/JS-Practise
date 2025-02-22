@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function minMax(nums) {
+  if (!nums.length) {
+    console.log(`Max: null : Min: null`);
+    return;
+  }
+
+  let largestNum = nums[0];
+  let smallestNum = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > largestNum) {
+      largestNum = nums[i];
+    }
+    if (nums[i] < smallestNum) {
+      smallestNum = nums[i];
+    }
+  }
+
+  console.log(`Max: ${largestNum} : Min: ${smallestNum}`);
+}
+
+// Test Cases
+minMax([-9, -55, -6, -18]);  // ✅ Sahi output dega: Max: -6, Min: -55
+minMax([-9, -6, -55, -44, -89]);  // ✅ Max: -6, Min: -89
+minMax([55, 44, 77, 66, 655, 44, 77, 34, -9]);  // ✅ Max: 655, Min: -9
+minMax([]);  // ✅ Max: null, Min: null
+minMax([100]);  // ✅ Max: 100, Min: 100
+
+  </script>
+</body>
+</html>

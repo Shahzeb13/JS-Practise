@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // Basketball ka product ka object banana ha
+        let product = {
+            name: 'basketball',
+            price: 2095
+        }
+
+
+        
+        //increasing the price by  500
+        product.price += 500;
+        
+        // product{delivery-time} =  '3 days';
+        //mera lika hua code uper ha
+        // product[delivery-time] = '3 days'; ider ma na delivery-time k arount colon nai dala ta snytax error da raha ta
+        product['delivery-time'] = '3 days';
+        console.log(product);
+
+    </script>
+</body>
+</html>

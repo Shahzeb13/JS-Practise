@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+    <script>
+        function titleChanges() {
+            setInterval(function() {
+                if(document.title === 'App'){
+                    document.title = `(2) new Messages`
+                }
+                else{
+                    document.title = `App`;
+                }
+            } , 1000)
+        }
+
+
+        titleChanges();
+    </script>
+</body>
+</html>
